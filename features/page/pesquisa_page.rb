@@ -7,12 +7,7 @@ class FazPesquisa < SitePrism::Page
   element :bt_mobile, 'button[aria-label="Pesquisa Google"]>div>span'
 
   def fazendo_pesquisa(t_a)
-    if t_a['Device'].eql?('Desktop')
-      pesquisa_desk.set t_a['Pesquisa']
-      bt_desk.click
-    elsif t_a['Device'].eql?('Mobile')
-      pesquisa_mobile.set t_a['Pesquisa']
-      pesquisa_mobile.send_keys :enter
-    end
+    pesquisa_desk.set t_a['Pesquisa']
+    bt_desk.click
   end
 end

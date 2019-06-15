@@ -1,3 +1,7 @@
+Before do
+  Capybara.reset_sessions!
+end
+
 # Depois de cada scenario ele tira uma screnshot e remove todos os espaços e virgulas
 After do |scenario|
   scenario_name = scenario.name.gsub(/\s+/, '_').tr('/', '_')

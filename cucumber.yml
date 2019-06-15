@@ -2,16 +2,13 @@
 ---
 
 default: -p pretty -p chrome -p producao -p html -p json
-
-desktop: -p progress -p cenarioA -p chrome_headless -p producao -p html_mobi -p json_desc
-mobille: -p progress -p cenarioB -p chrome_mob_headless -p producao -p html_mobi -p json_mobi
+desktop: -p progress -p cenarioA -p chrome_headless -p producao -p html_desc -p json_desc
 desk_ci: -p progress -p cenarioA -p ci_headless -p producao -p desk_ci
 
 pretty: --format pretty
 progress: --format progress
 
 cenarioA: -t @PesquisaDesk
-cenarioB: -t @PesquisaMobile
 
 homolog: AMBIENTE=homolog
 producao: AMBIENTE=producao
@@ -19,13 +16,7 @@ producao: AMBIENTE=producao
 chrome: BROWSER=chrome
 chrome_headless: BROWSER=chrome_headless
 ci_headless: BROWSER=ci_headless
-chrome_mobile: BROWSER=chrome_mobile
-chrome_mob_headless: BROWSER=chrome_mob_headless
-firefox: BROWSER=firefox
-firefox_headless: BROWSER=firefox_headless
 
-desk_ci: --format json --out=results/desc/desk_ci.json
-html_desc: --format html --out=results/desc/report.html
+desk_ci: --format json --out=results/ci/desk_ci.json
+html_desc: --format html --out=results/desc/html_desc.html
 json_desc: --format json --out=results/desc/json_desc.json
-html_mobi: --format html --out=results/mobi/report.html
-json_mobi: --format json --out=results/mobi/report.json
